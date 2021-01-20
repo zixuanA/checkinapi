@@ -1,4 +1,4 @@
-name: Python package
+name: checkin
 
 on: 
   push: # push触发
@@ -26,10 +26,10 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: checkin
       env:
-        openid:${{secrets.openid}}
-        sid:${{secrets.sid}}
-        sex:${{secrets.sex}}
-        name:${{secrets.name}}
-        addr1:${{secrets.addr1}}
-        addr2:${{secrets.addr2}} 
+        openid: ${{secrets.openid}}
+        sid: ${{secrets.sid}}
+        sex: ${{secrets.sex}}
+        name: ${{secrets.name}}
+        addr1: ${{secrets.addr1}}
+        addr2: ${{secrets.addr2}} 
       run: python main.py
